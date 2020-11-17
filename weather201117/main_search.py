@@ -59,10 +59,25 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=event.message.text))
     '''
-    line_bot_api.reply_message(
+
+    text = event.message.text
+    if text in ['search','検索']:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage('検索を開始します')
+        )
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage('なんでしょうか')
+        )
+
+
+    #line_bot_apiのreply_messageメソッドでTextSendMessage(text="送信したい言葉")
+    """line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=sc.getWeather())
-    )
+    )"""
 
 if __name__ == "__main__":
 #    app.run()
