@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 
 def getWeather():
     #tenki.jpの目的の地域のページのURL（今回は東京都調布市）
-    url = 'https://tenki.jp/forecast/3/16/4410/13208/'
+    #url = 'https://tenki.jp/forecast/3/16/4410/13208/'
+    url = 'https://tenki.jp/forecast/4/20/5610/17201/'
     #HTTPリクエスト
     r = requests.get(url)
 
