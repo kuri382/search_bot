@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "marketing"
+version = "0.1.0"
+description = ""
+authors = ["kuribayashi <tktkchestnut@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.26.0"
+bs4 = "^0.0.1"
+python-pptx = "^0.6.19"
+selenium = "^3.141.0"
+chromedriver-binary = "89.0.4389.23.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
