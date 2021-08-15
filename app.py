@@ -1,17 +1,16 @@
-import subprocess
-import requests
-import pptx
-import time
 import os
 import shutil
+import subprocess
+import time
+from glob import glob
+
 import chromedriver_binary
+import pptx
+import requests
 from bs4 import BeautifulSoup
 from pptx import Presentation
-from pptx.util import Pt
-from glob import glob
+from pptx.util import Inches, Pt
 from selenium import webdriver
-from pptx.util import Inches
-
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
@@ -118,9 +117,9 @@ def main():
     try:
         # urlを代入
         search_url = "https://www.google.co.jp/search"
-        search_params = {"q": "コラボ商品　プレスリリース"}
+        search_params = {"q": "コンテンツ　マーケティング"}
         # データ取得
-        time.sleep(1)
+        time.sleep(0.3)
         soup = get_html(search_url, search_params)
         # クラスを指定し，aタグのもののみ抽出
         tags = soup.select('.yuRUbf > a')
@@ -137,8 +136,8 @@ def main():
                 #urlのhref以下を取得
                 url = tag.get("href")
                 #実行中の記事タイトル，URLを表示
-                #print(current_title)
-                #print(url)
+                print(current_title)
+                print(url)
 
                 screen_shot(driver, url, file_number)
 

@@ -1,16 +1,15 @@
-import subprocess
-import requests
-import pptx
-import time
 import os
 import shutil
+import subprocess
+import time
+from glob import glob
+
+import pptx
+import requests
 from bs4 import BeautifulSoup
 from pptx import Presentation
-from pptx.util import Pt
-from glob import glob
+from pptx.util import Inches, Pt
 from selenium import webdriver
-from pptx.util import Inches
-
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",

@@ -1,18 +1,13 @@
-from flask import Flask, request, abort
 import os
-import scrape as sc
-import auto_prtsc as ap
 
-from linebot import (
-    LineBotApi, WebhookHandler
-)
-from linebot.exceptions import (
-    InvalidSignatureError
-)
+import auto_prtsc as ap
+import scrape as sc
+from flask import Flask, abort, request
+from linebot import LineBotApi, WebhookHandler
+from linebot.exceptions import InvalidSignatureError
+
 #LINEでのイベントを取得
-from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
-)
+from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 app = Flask(__name__)
 
